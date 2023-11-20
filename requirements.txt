@@ -1,0 +1,10 @@
+SQLAlchemy
+flask-cors
+marshmallow
+flask
+flask-sqlalchemy
+flask-restful
+requests
+urllib3==1.26.6
+pyodbc
+pymssql
