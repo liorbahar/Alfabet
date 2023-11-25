@@ -30,5 +30,10 @@ class Event(db.Model):
             "creationTime": str(self.created_at)
         }
 
+
 def find_event_by_uuid(event_uuid: str) -> Event:
     return db.session.query(Event).filter_by(uuid=event_uuid).scalar()
+
+
+def delete_event_by_uuid(event_uuid: str):
+    db.session.query(Event).filter_by(uuid=event_uuid).delete()
