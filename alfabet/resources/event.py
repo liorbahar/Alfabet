@@ -71,15 +71,14 @@ class EventApi(Resource):
             return { 'message': f"Failed while delete specific event due to: {str(e)}"}, 500
     
 
-
 class EventsApi(Resource):
         
-    def get(self, sort_option: str = None):
+    def get(self):
         location: str = request.args.get('location')
         venue: str = request.args.get('venue')
         sort_option: str = request.args.get('sortOption')
 
-        query :Query = db.session.query(Event)
+        query: Query = db.session.query(Event)
         if location:
             query = query.filter_by(location=location)
 
@@ -90,8 +89,8 @@ class EventsApi(Resource):
             query = self.__sort_events(sort_option, query)
         
         events: List[Event] = query.all() 
-        return { "events" : [event.to_json() for event in events] }
-    
+        return {"events": [event.to_json() for event in events] }
+
     def __sort_events(self, sort_option: str,query: Query):
         if sort_option == "date":
             return query.order_by(Event.date.desc())
