@@ -1,9 +1,7 @@
 import unittest
 from flask import Flask
 from unittest.mock import patch, MagicMock
-
 from flask_restful import Api
-
 from alfabet.database import db
 from alfabet.database.models.event import Event
 from alfabet.resources.view import init_view
