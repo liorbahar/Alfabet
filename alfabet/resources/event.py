@@ -91,11 +91,13 @@ class EventsApi(Resource):
         events: List[Event] = query.all() 
         return {"events": [event.to_json() for event in events] }
 
-    def __sort_events(self, sort_option: str,query: Query):
+    def __sort_events(self, sort_option: str, query: Query):
         if sort_option == "date":
             return query.order_by(Event.date.desc())
         elif sort_option == "participants":
             return query.order_by(Event.participants_number.desc())
         elif sort_option == "creationTime":
             return query.order_by(Event.created_at.desc())
+        else:
+            return query
 
