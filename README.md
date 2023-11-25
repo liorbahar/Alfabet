@@ -81,24 +81,25 @@ with venv:
         
 
 * GET - /event/<event_id>
-    *  ```json  
-        {
-            "creationTime": "2023-11-26 00:07:13.450000+00:00",
-            "date": "2022-12-12 00:09:00+00:00",
-            "id": "e86c84f2-a089-4129-8f18-ad6a8318f856",
-            "location": "tel jjjaviv",
-            "participantsNumber": 9999,
-            "venue": "tel jjjjaviv"
-        }
-        ```
+    * response
+     ```json  
+    {
+        "creationTime": "2023-11-26 00:07:13.450000+00:00",
+        "date": "2022-12-12 00:09:00+00:00",
+        "id": "e86c84f2-a089-4129-8f18-ad6a8318f856",
+        "location": "tel jjjaviv",
+        "participantsNumber": 9999,
+        "venue": "tel jjjjaviv"
+    }
+    ```
         
 * DELETE - /event/<event_id>
     * response
-      ```json  
-        {
-            "message": "Event with uuid: e86c84f2-a089-4129-8f18-ad6a8318f856 delete successfully"
-        }
-        ```
+    ```json  
+    {
+        "message": "Event with uuid: e86c84f2-a089-4129-8f18-ad6a8318f856 delete successfully"
+    }
+    ```
             
 * GET - /events?location=<location_name>&venue=<venue_name>&sortOption=<date|participants|creationTime>
     * the query params are optional, we can get all the events by send request to /event
