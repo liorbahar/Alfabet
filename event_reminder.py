@@ -17,6 +17,7 @@ def notify(event: Event, *args, **kwargs):
 class EventReminder:
 
     def listen(self):
+        print('Starting remind event 30 min before')
         while True:
             events = session.query(Event).filter(Event.date >= datetime.now() + timedelta(minutes=30),
                     Event.date <= datetime.now() + timedelta(minutes=60)).all()
