@@ -21,6 +21,9 @@ with venv:
 6. run the command: pip install -r requirements.txt
 7. run the file run.py: python run.py
 
+## Reminder
+To start the event reminder run 'python event_reminder.py'
+
 ## Doc
 * POST - create new event - /event
     * request
