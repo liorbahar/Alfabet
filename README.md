@@ -35,7 +35,7 @@ with venv:
 7. run the file run.py: python run.py
 
 ## Doc
-* POST - /event
+* POST - create new event - /event
     * request
     ```json
         {
@@ -57,7 +57,7 @@ with venv:
         }
     ```
     
-* PUT - /event/<evnet_id>
+* PUT - update event details -  /event/<evnet_id>
     * request
     ```json
         {
@@ -80,7 +80,7 @@ with venv:
     ```
         
 
-* GET - /event/<event_id>
+* GET - get specific event details - /event/<event_id>
     * response
      ```json  
     {
@@ -93,7 +93,7 @@ with venv:
     }
     ```
         
-* DELETE - /event/<event_id>
+* DELETE - delete specific event - /event/<event_id>
     * response
     ```json  
     {
@@ -102,6 +102,7 @@ with venv:
     ```
             
 * GET - /events?location=<location_name>&venue=<venue_name>&sortOption=<date|participants|creationTime>
+    * this route can retrieve events by some filters
     * the query params are optional, we can get all the events by send request to /event
     * we can add filters by query params: location, venue, sortOption
     * response
