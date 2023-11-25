@@ -1,4 +1,3 @@
-
 from time import sleep
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -11,8 +10,10 @@ engine = create_engine("mssql+pyodbc://localhost/alfabet?driver=ODBC+Driver+17+f
 session_factory = sessionmaker(bind=engine)
 session = session_factory()
 
+
 def notify(event: Event, *args, **kwargs):
     print(f"event start at location {event.location}")
+
 
 class EventReminder:
 
