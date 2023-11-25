@@ -5,8 +5,9 @@ from datetime import datetime, timedelta, timezone
 from alfabet.database.models.event import Event
 import threading
 import pytz
+from config import Config
 
-engine = create_engine("mssql+pyodbc://localhost/alfabet?driver=ODBC+Driver+17+for+SQL+Server")
+engine = create_engine(Config.SQLALCHEMY_DATABASE_URI)
 session_factory = sessionmaker(bind=engine)
 session = session_factory()
 
